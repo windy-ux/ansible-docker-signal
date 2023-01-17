@@ -1,0 +1,23 @@
+---
+
+- name: Create a data container for signal desktop
+  docker_volume:
+    name: signal-desktop-data
+  tags:
+    - signal
+
+- name: Create signal desktop container
+  docker_container:
+    name: signal-desktop
+    image: davidlor/signal-desktop-gui
+    state: started
+    recreate: yes
+    restart_policy: always
+    published_ports:
+      - "5800:5800"
+    volumes:
+      - signal-desktop-data:/config
+      - /etc/localtime:/etc/localtime:ro
+  tags:
+    - signal
+

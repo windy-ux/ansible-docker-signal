@@ -1,5 +1,1 @@
-username: heat
-
-packages:
-  - tmux
-  - speedtest-cli
+distribution: focal
