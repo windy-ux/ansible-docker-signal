@@ -1,0 +1,53 @@
+---
+
+- name: Install dependencies
+  apt:
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - lsb-release
+      - gnupg
+    state: present
+    update_cache: yes
+  tags:
+    - docker
+
+- name: Add Docker GPG apt key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  tags:
+    - docker
+
+- name: Add Docker repository
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu focal stable
+    state: present
+    update_cache: yes
+  tags:
+    - docker
+
+- name: Install related Ubuntu packages
+  apt:
+    name: python3-pip
+    state: latest
+
+- name: Install python packages
+  pip:
+    name: 
+      - docker
+      - docker-compose
+
+- name: Install Docker engine
+  apt:
+    pkg:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+    state: present
+    update_cache: yes
+  notify:
+   - Restart docker
+  tags:
+    - docker

@@ -1,0 +1,5 @@
+username: heat
+
+packages:
+  - tmux
+  - speedtest-cli
