@@ -9,7 +9,7 @@
 - name: Create signal desktop container
   docker_container:
     name: signal-desktop
-    image: davidlor/signal-desktop-gui
+    image: orechovnikolovnik/signal-desktop:latest
     state: started
     recreate: yes
     restart_policy: always
