@@ -9,3 +9,19 @@ python3 -m pip install --user ansible
 ```sh
 ansible --version
 ```
+
+After this playbook docker will be installed and signal desktop container running
+You can print details by 
+```sh
+sudo docker ps
+```
+
+Start container
+```sh
+sudo docker container start signal-desktop
+```
+
+Stop contaienr
+```sh
+sudo docker container stop signal-desktop
+```
