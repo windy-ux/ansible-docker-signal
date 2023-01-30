@@ -26,4 +26,5 @@ Stop contaienr
 sudo docker container stop signal-desktop
 ```
 ## Problems
-- SOund is not playing
+- Sound is not playing
+- Create explanatory manual
