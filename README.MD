@@ -28,7 +28,10 @@ sudo docker container stop signal-desktop
 ## Problems
 - Sound is not playing
 - Create explanatory manual
+- ntoher problem
 - some other troubles
 - add line
 - ntoher problem
+## trying protection
 
+now push to master
